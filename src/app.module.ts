@@ -6,6 +6,8 @@ import { DatabaseModule } from './database/database.module';
 import { EmployeesModule } from './employees/employees.module';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { APP_GUARD } from '@nestjs/core';
+import { BooksModule } from './books/books.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   controllers: [AppController],
@@ -32,6 +34,8 @@ import { APP_GUARD } from '@nestjs/core';
         limit: 100,
       },
     ]),
+    BooksModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
